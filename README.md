@@ -1,6 +1,6 @@
 This repository contains a Linux kernel configuration file suitable for a Dell Wyse 3040 thin client. It includes a basic configuration to make use of the hardware the 3040 provides, while excluding unnecessary drivers. This will be enough to get the system up and running, but you might need to enable extra options depending on your specific needs.
 
-The current .config file is targeted at linux-6.4. For other versions, check out the 'releases' section.
+The current .config file is targeted at linux-6.5. For other versions, check out the 'releases' section.
 
 A quick overview is provided below.
 
