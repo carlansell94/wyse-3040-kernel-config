@@ -1,6 +1,6 @@
 This repository contains a Linux kernel configuration file suitable for a Dell Wyse 3040 thin client. It includes a basic configuration to make use of the hardware the 3040 provides, while excluding unnecessary drivers. This will be enough to get the system up and running, but you might need to enable extra options depending on your specific needs.
 
-The current .config file is targeted at linux-6.10. For other versions, check out the 'releases' section.
+The current .config file is targeted at linux-6.12. For other versions, check out the 'releases' section.
 
 A quick overview is provided below.
 
@@ -66,9 +66,7 @@ Meltdown
 Enable the following to build the kernel with mitigations.
 
 ```
-CONFIG_SPECULATION_MITIGATIONS
-CONFIG_PAGE_TABLE_ISOLATION
-CONFIG_RETPOLINE
+CONFIG_CPU_MITIGATIONS
 ```
 
 If you do compile your kernel with mitigations, they can be disabled at boot adding ```mitigations=off``` to your kernel command line.
