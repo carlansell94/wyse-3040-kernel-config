@@ -1,6 +1,6 @@
 This repository contains a Linux kernel configuration file suitable for a Dell Wyse 3040 thin client. It includes a basic configuration to make use of the hardware the 3040 provides, while excluding unnecessary drivers. This will be enough to get the system up and running, but you might need to enable extra options depending on your specific needs.
 
-The current .config file is targeted at linux-6.17. For other versions, check out the 'releases' section.
+The current .config file is targeted at linux-6.18. For other versions, check out the 'releases' section.
 
 A quick overview is provided below.
 
@@ -20,7 +20,7 @@ The Wifi/BT driver is required, if you have the bundled Wifi card. See the secti
 This firmware is provided by the ```linux-firmware``` package.
 
 # Wifi and Bluetooth
-The optional Azurewave AW-CM389MA Wifi and Bluetooth card uses the Marvell 8897 chipset. The driver for this card is configured as a module - if your device has is, the necessary modules will be loaded automatically.
+The optional Azurewave AW-CM389MA Wifi and Bluetooth card uses the Marvell 8897 chipset. The driver for this card is configured as a module - if your device has it, the necessary modules will be loaded automatically.
 
 If you know you don't have the card, you can disable the following options:
 
@@ -41,7 +41,7 @@ CONFIG_SND_SOC
 ```
 
 # Graphics Driver
-The .config file diables the Intel ```i915``` driver. If you're not running your Wyse headless, enable the following option.
+The .config file disables the Intel ```i915``` driver. If you're not running your Wyse headless, enable the following option.
 
 ```
 CONFIG_DRM_I915
