@@ -1,0 +1,28 @@
+name: Create release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Extract tag
+        id: tag
+        run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.TAG }}
+          name: "Linux ${{ steps.tag.outputs.TAG }}"
+          body: "Release for Linux ${{ steps.tag.outputs.TAG }}"
+          files: .config
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
